@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>宿泊施設Q&A</title>
+    <title>帝国ホテルのQ&A愛</title>
     <!-- Google Fonts の追加 -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
     <!-- Font Awesome の追加（アイコン用） -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #34495e;
-            --accent-color: #3498db;
+            --primary-color: #856C34; /* テーマカラー */
+            --secondary-color: #5D4B1E; /* ダークトーンのセカンダリーカラー */
+            --accent-color: #A88F48; /* アクセントカラー */
             --text-color: #2c3e50;
             --background-color: #f5f6fa;
             --section-background: #ffffff;
-            --header-background: #2c3e50;
-            --header-text-color: #ffffff;
-            --button-hover-color: #1a252f;
+            --header-background: #856C34; /* ヘッダーの背景色をテーマカラーに */
+            --header-text-color: #ffffff; /* ヘッダーのテキスト色を白に */
+            --button-hover-color: #5D4B1E; /* ボタンホバー時の色 */
         }
 
         body {
@@ -106,6 +106,7 @@
         .qa-button i {
             margin-right: 10px;
             font-size: 1.2em;
+            color: #ecf0f1; /* アイコンの色を白に */
         }
 
         .qa-content {
@@ -168,13 +169,14 @@
             このテンプレートは宿泊施設向けのQ&Aサイトです。
             - ヘッダーをおしゃれなホテル風にデザインしました。
             - 各質問ボタンの先頭にモノクロのアイコンを追加しました。
-            - 全体のデザインを洗練させ、視覚的に魅力的にしました。
+            - テーマカラーを#856C34に変更しました。
+            - サイトタイトルを「帝国ホテルのQ&A愛」に更新しました。
             - 内容は変更していません。
             - お母様がGPTを使って編集できるよう、コメントを追加しています。
         -->
         <header>
             <h1>
-                宿泊施設Q&A | Accommodation Q&A | 住宿Q&A | 숙박 Q&A
+                帝国ホテルのQ&A愛
             </h1>
             <p class="intro">
                 よくある質問と回答を簡潔にまとめました。
@@ -351,6 +353,35 @@
             </div>
         </div>
 
+        <!-- ★ 新しいQ&A: 子供用アメニティや貸出備品 -->
+        <div class="qa-section">
+            <button class="qa-button">
+                <i class="fa-solid fa-child"></i>
+                子供用のアメニティや貸出備品はありますか？<br>
+                Do you offer child amenities and rental equipment?<br>
+                您们提供儿童用品和租借设备吗？<br>
+                어린이용 어메니티 및 대여 물품이 있나요?
+            </button>
+            <div class="qa-content">
+                <p>
+                    お子様連れのお客様にも安心しておくつろぎいただけますよう、以下のアイテムをご用意しております。
+                </p>
+                <ul>
+                    <li>ベビーベッド（10か月未満のお子様用）</li>
+                    <li>ベッドガード</li>
+                    <li>お子様用アメニティ（歯ブラシ、スリッパ、ミニハンカチ、ボディウォッシュ、ボディースポンジの5点セット）</li>
+                    <li>お子さま用パジャマ（S:115cm、M:130cm、L:145cm）</li>
+                    <li>コップ</li>
+                    <li>ふみ台</li>
+                    <li>補助便座</li>
+                    <li>おむつ用ゴミ箱</li>
+                </ul>
+                <p>
+                    ※数に限りがあるものもございますので、ご予約時にあわせてお申し付けください。
+                </p>
+            </div>
+        </div>
+
         <!-- お問い合わせ -->
         <div class="qa-section">
             <button class="qa-button">
@@ -401,4 +432,5 @@
     </script>
 </body>
 </html>
+
 
