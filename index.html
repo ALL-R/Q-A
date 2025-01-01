@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>宿泊施設Q&Aサイト</title>
+    <title>宿泊施設Q&A</title>
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -12,8 +12,6 @@
             --text-color: #2c3e50;
             --background-color: #f5f6fa;
             --section-background: #ffffff;
-            --language-header-bg: #ecf0f1;
-            --language-header-color: #2c3e50;
         }
 
         body {
@@ -26,43 +24,47 @@
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
         }
 
         header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
 
         h1 {
             color: var(--primary-color);
-            font-size: 2.5em;
-            margin-bottom: 0.5em;
+            font-size: 1.8em;
+            margin-bottom: 0.3em;
+        }
+
+        p.intro {
+            margin-bottom: 15px;
+            font-size: 0.95em;
         }
 
         .qa-section {
             background: var(--section-background);
-            border-radius: 8px;
-            margin-bottom: 20px;
+            border-radius: 6px;
+            margin-bottom: 15px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             overflow: hidden;
         }
 
         .qa-button {
             width: 100%;
-            padding: 15px 20px;
+            padding: 12px 16px;
             background: var(--primary-color);
             color: white;
             border: none;
             text-align: left;
             cursor: pointer;
-            font-size: 1.1em;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            font-size: 1em;
+            display: block;
             transition: background-color 0.3s;
+            position: relative;
         }
 
         .qa-button:hover {
@@ -71,8 +73,11 @@
 
         .qa-button::after {
             content: '+'; 
-            font-size: 1.5em;
-            margin-left: 10px;
+            font-size: 1.2em;
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
         }
 
         .qa-button.active::after {
@@ -81,36 +86,24 @@
 
         .qa-content {
             display: none;
-            padding: 20px;
+            padding: 16px;
+            font-size: 0.95em;
         }
 
         .faq-text {
-            margin-bottom: 20px;
-        }
-
-        .language-section {
-            margin-bottom: 20px;
-        }
-
-        .language-header {
-            background: var(--language-header-bg);
-            color: var(--language-header-color);
-            padding: 10px;
-            border-radius: 4px;
-            margin-bottom: 10px;
-            font-weight: bold;
+            margin-bottom: 15px;
         }
 
         .contact-button {
             background: var(--accent-color);
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 8px 16px;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 1em;
+            font-size: 0.9em;
             transition: opacity 0.3s;
-            margin-top: 10px;
+            margin-top: 8px;
         }
 
         .contact-button:hover {
@@ -127,241 +120,232 @@
             }
 
             h1 {
-                font-size: 2em;
+                font-size: 1.5em;
+            }
+
+            .qa-button {
+                font-size: 0.95em;
+                padding: 10px 14px;
+            }
+
+            .qa-content {
+                font-size: 0.85em;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!--
+            このテンプレートは宿泊施設向けのQ&Aサイトです。
+            多言語対応（日本語、英語、中国語、韓国語）で質問と回答が表示されます。
+            各質問ボタンをクリックすると、関連する回答が展開されます。
+            これまでの指示内容:
+            - ヘッダーを簡素化し、四か国語を一行にまとめました。
+            - 各質問と回答を簡潔にし、見やすくしました。
+            - 言語ラベルを削除し、各言語が自然に続く形にしました。
+            - 10項目のQ&Aを追加しました。
+            - お母様がGPTを使って編集できるよう、コメントを追加しました。
+        -->
         <header>
-            <h1>宿泊施設Q&A</h1>
-            <p>よくある質問とその回答をご案内します</p>
+            <h1>
+                宿泊施設Q&A | Accommodation Q&A | 住宿Q&A | 숙박 Q&A
+            </h1>
         </header>
 
         <!-- Q1 -->
         <div class="qa-section">
-            <button class="qa-button">チェックインとチェックアウトの時間は？</button>
+            <button class="qa-button">
+                チェックイン/チェックアウト時間は？<br>
+                Check-in/Check-out times?<br>
+                入住/退房时间？<br>
+                체크인/체크아웃 시간은?
+            </button>
             <div class="qa-content">
-                <!-- 日本語 -->
-                <div class="language-section">
-                    <div class="language-header">日本語</div>
-                    <div class="faq-text">
-                        【回答】<br>
-                        チェックインは午後3時から、チェックアウトは午前11時までとなっております。早めのチェックインや遅めのチェックアウトをご希望の場合は、事前にご連絡ください。
-                    </div>
-                </div>
-                <!-- 英語 -->
-                <div class="language-section">
-                    <div class="language-header">English</div>
-                    <div class="faq-text">
-                        <strong>Answer:</strong><br>
-                        Check-in is from 3:00 PM and check-out is until 11:00 AM. If you wish to check in earlier or check out later, please contact us in advance.
-                    </div>
-                </div>
-                <!-- 中国語 -->
-                <div class="language-section">
-                    <div class="language-header">中文</div>
-                    <div class="faq-text">
-                        <strong>回答：</strong><br>
-                        入住时间为下午3点开始，退房时间为上午11点。如需提前入住或延迟退房，请提前联系我们。
-                    </div>
-                </div>
-                <!-- 韓国語 -->
-                <div class="language-section">
-                    <div class="language-header">한국어</div>
-                    <div class="faq-text">
-                        <strong>답변:</strong><br>
-                        체크인은 오후 3시부터 가능하며, 체크아웃은 오전 11시까지입니다. 일찍 체크인하거나 늦게 체크아웃을 원하시는 경우 사전에 연락해 주시기 바랍니다.
-                    </div>
-                </div>
+                チェックインは15:00、チェックアウトは11:00です。変更希望は事前に。<br>
+                Check-in: 3 PM, Check-out: 11 AM. Request changes in advance.<br>
+                入住：下午3点，退房：上午11点。需更改请提前联系。<br>
+                체크인: 오후 3시, 체크아웃: 오전 11시. 변경 요청은 사전 연락 바랍니다.
             </div>
         </div>
 
         <!-- Q2 -->
         <div class="qa-section">
-            <button class="qa-button">ペットの同伴は可能ですか？</button>
+            <button class="qa-button">
+                ペットは可？<br>
+                Are pets allowed?<br>
+                宠物可以带吗？<br>
+                애완동물 동반 가능?
+            </button>
             <div class="qa-content">
-                <!-- 日本語 -->
-                <div class="language-section">
-                    <div class="language-header">日本語</div>
-                    <div class="faq-text">
-                        【回答】<br>
-                        当施設ではペットの同伴を歓迎しております。ただし、一部の客室ではペットの同伴が制限されている場合がありますので、ご予約時にご確認ください。また、ペット用のアメニティもご用意しております。
-                    </div>
-                </div>
-                <!-- 英語 -->
-                <div class="language-section">
-                    <div class="language-header">English</div>
-                    <div class="faq-text">
-                        <strong>Answer:</strong><br>
-                        We welcome pets at our facility. However, some rooms may have restrictions regarding pet accommodations, so please confirm at the time of booking. We also provide amenities for pets.
-                    </div>
-                </div>
-                <!-- 中国語 -->
-                <div class="language-section">
-                    <div class="language-header">中文</div>
-                    <div class="faq-text">
-                        <strong>回答：</strong><br>
-                        本设施欢迎携带宠物入住。但某些客房可能对宠物的携带有一定限制，请预订时确认。此外，我们还为宠物提供了相关设施。
-                    </div>
-                </div>
-                <!-- 韓国語 -->
-                <div class="language-section">
-                    <div class="language-header">한국어</div>
-                    <div class="faq-text">
-                        <strong>답변:</strong><br>
-                        저희 시설은 애완동물 동반을 환영합니다. 다만, 일부 객실에서는 애완동물 동반에 제한이 있을 수 있으니 예약 시 확인해 주시기 바랍니다. 또한, 애완동물을 위한 어메니티도 제공하고 있습니다.
-                    </div>
-                </div>
+                ペット歓迎。部屋による制限あり。<br>
+                Pets welcome. Some room restrictions apply.<br>
+                欢迎携带宠物。部分房间有限制。<br>
+                애완동물 동반 가능. 일부 객실 제한 있음.
             </div>
         </div>
 
         <!-- Q3 -->
         <div class="qa-section">
-            <button class="qa-button">駐車場は利用できますか？</button>
+            <button class="qa-button">
+                駐車場は？<br>
+                Is parking available?<br>
+                停车场可用吗？<br>
+                주차 가능?
+            </button>
             <div class="qa-content">
-                <!-- 日本語 -->
-                <div class="language-section">
-                    <div class="language-header">日本語</div>
-                    <div class="faq-text">
-                        【回答】<br>
-                        はい、当施設には無料の駐車場を完備しております。お車でお越しの際は、フロントで駐車スペースをお知らせください。
-                    </div>
-                </div>
-                <!-- 英語 -->
-                <div class="language-section">
-                    <div class="language-header">English</div>
-                    <div class="faq-text">
-                        <strong>Answer:</strong><br>
-                        Yes, our facility has a free parking lot available. If you are coming by car, please inform the front desk about your parking space.
-                    </div>
-                </div>
-                <!-- 中国語 -->
-                <div class="language-section">
-                    <div class="language-header">中文</div>
-                    <div class="faq-text">
-                        <strong>回答：</strong><br>
-                        是的，我们的设施配备了免费停车场。驾车前来的客人请在前台告知停车位需求。
-                    </div>
-                </div>
-                <!-- 韓国語 -->
-                <div class="language-section">
-                    <div class="language-header">한국어</div>
-                    <div class="faq-text">
-                        <strong>답변:</strong><br>
-                        네, 저희 시설에는 무료 주차장이 마련되어 있습니다. 차로 오시는 경우 프론트에 주차 공간을 알려주시기 바랍니다.
-                    </div>
-                </div>
+                無料駐車場あり。到着時にお知らせください。<br>
+                Free parking available. Inform us upon arrival.<br>
+                免费停车场。到达时告知前台。<br>
+                무료 주차장 제공. 도착 시 알려주세요.
             </div>
         </div>
 
         <!-- Q4 -->
         <div class="qa-section">
-            <button class="qa-button">朝食は含まれていますか？</button>
+            <button class="qa-button">
+                朝食は？<br>
+                Is breakfast included?<br>
+                早餐包含吗？<br>
+                아침 식사 포함?
+            </button>
             <div class="qa-content">
-                <!-- 日本語 -->
-                <div class="language-section">
-                    <div class="language-header">日本語</div>
-                    <div class="faq-text">
-                        【回答】<br>
-                        当宿泊プランには朝食が含まれております。和食と洋食の選択が可能で、地元の新鮮な食材を使用したメニューをご用意しています。
-                    </div>
-                </div>
-                <!-- 英語 -->
-                <div class="language-section">
-                    <div class="language-header">English</div>
-                    <div class="faq-text">
-                        <strong>Answer:</strong><br>
-                        Breakfast is included in our accommodation plans. You can choose between Japanese and Western-style breakfasts, featuring menus made with fresh local ingredients.
-                    </div>
-                </div>
-                <!-- 中国語 -->
-                <div class="language-section">
-                    <div class="language-header">中文</div>
-                    <div class="faq-text">
-                        <strong>回答：</strong><br>
-                        我们的住宿计划包含早餐。您可以选择日式或西式早餐，我们提供使用当地新鲜食材制作的菜单。
-                    </div>
-                </div>
-                <!-- 韓国語 -->
-                <div class="language-section">
-                    <div class="language-header">한국어</div>
-                    <div class="faq-text">
-                        <strong>답변:</strong><br>
-                        저희 숙박 요금에는 아침 식사가 포함되어 있습니다. 한식과 양식 중 선택 가능하며, 현지의 신선한 재료를 사용한 메뉴를 제공합니다.
-                    </div>
-                </div>
+                朝食含む。和洋選択可。<br>
+                Breakfast included. Japanese or Western options.<br>
+                包含早餐。可选日式或西式。<br>
+                아침 식사 포함. 한식 또는 양식 선택 가능.
+            </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="qa-section">
+            <button class="qa-button">
+                無料Wi-Fiは利用できますか？<br>
+                Is free Wi-Fi available?<br>
+                是否提供免费Wi-Fi？<br>
+                무료 Wi-Fi 이용 가능?
+            </button>
+            <div class="qa-content">
+                はい、全客室で無料Wi-Fiを提供しています。パスワードはフロントでお知らせします。<br>
+                Yes, free Wi-Fi is available in all rooms. Password provided at the front desk.<br>
+                是的，所有客房均提供免费Wi-Fi。密码将在前台提供。<br>
+                네, 모든 객실에서 무료 Wi-Fi를 제공합니다. 비밀번호는 프론트에서 알려드립니다.
+            </div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="qa-section">
+            <button class="qa-button">
+                禁煙ルームはありますか？<br>
+                Are there non-smoking rooms?<br>
+                是否有禁烟房间？<br>
+                금연 객실이 있나요?
+            </button>
+            <div class="qa-content">
+                はい、禁煙ルームをご用意しております。予約時にお知らせください。<br>
+                Yes, we have non-smoking rooms. Please inform us when booking.<br>
+                是的，我们有禁烟房间。请在预订时告知。<br>
+                네, 금연 객실이 있습니다. 예약 시 알려주세요.
+            </div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="qa-section">
+            <button class="qa-button">
+                バリアフリー設備はありますか？<br>
+                Are there barrier-free facilities?<br>
+                是否有无障碍设施？<br>
+                장애인 편의 시설이 있나요?
+            </button>
+            <div class="qa-content">
+                はい、バリアフリー対応の客室と設備があります。詳細はお問い合わせください。<br>
+                Yes, we have barrier-free rooms and facilities. Please contact us for details.<br>
+                是的，我们有无障碍客房和设施。详情请联系我们。<br>
+                네, 장애인 편의 시설과 객실이 있습니다. 자세한 내용은 문의해주세요.
+            </div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="qa-section">
+            <button class="qa-button">
+                レストランはありますか？<br>
+                Is there a restaurant?<br>
+                是否有餐厅？<br>
+                레스토랑이 있나요?
+            </button>
+            <div class="qa-content">
+                はい、館内にレストランがあります。朝食と夕食を提供しています。<br>
+                Yes, we have a restaurant on-site. We serve breakfast and dinner.<br>
+                是的，我们酒店内有餐厅。提供早餐和晚餐。<br>
+                네, 호텔 내에 레스토랑이 있습니다. 아침 식사와 저녁 식사를 제공합니다.
+            </div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="qa-section">
+            <button class="qa-button">
+                ルームサービスは利用できますか？<br>
+                Is room service available?<br>
+                是否提供客房服务？<br>
+                룸서비스 이용 가능?
+            </button>
+            <div class="qa-content">
+                はい、ルームサービスを提供しております。メニューはフロントでご覧ください。<br>
+                Yes, room service is available. Please check the menu at the front desk.<br>
+                是的，我们提供客房服务。菜单请在前台查看。<br>
+                네, 룸서비스를 이용할 수 있습니다. 메뉴는 프론트에서 확인해주세요.
+            </div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="qa-section">
+            <button class="qa-button">
+                近隣の観光スポットは？<br>
+                What are nearby attractions?<br>
+                附近有哪些景点？<br>
+                주변 관광지는 어디인가요?
+            </button>
+            <div class="qa-content">
+                当ホテル周辺には多くの観光スポットがあります。詳しくはフロントで案内いたします。<br>
+                There are many attractions around the hotel. Details available at the front desk.<br>
+                酒店周边有许多景点。详情请在前台咨询。<br>
+                호텔 주변에 많은 관광지가 있습니다. 자세한 내용은 프론트에서 안내해드립니다.
             </div>
         </div>
 
         <!-- お問い合わせ -->
         <div class="qa-section">
-            <button class="qa-button">お問い合わせ方法</button>
+            <button class="qa-button">
+                お問い合わせ<br>
+                Contact Us<br>
+                联系方式<br>
+                문의
+            </button>
             <div class="qa-content">
-                <!-- 日本語 -->
-                <div class="language-section">
-                    <div class="language-header">日本語</div>
-                    <div class="faq-text">
-                        【回答】<br>
-                        お問い合わせは以下の方法で承っております：
-                        <ul>
-                            <li>電話: 012-345-6789</li>
-                            <li>Email: info@youraccommodation.com</li>
-                            <li>お問い合わせフォーム: <a href="contact.html">こちら</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- 英語 -->
-                <div class="language-section">
-                    <div class="language-header">English</div>
-                    <div class="faq-text">
-                        <strong>Answer:</strong><br>
-                        You can contact us through the following methods:
-                        <ul>
-                            <li>Phone: 012-345-6789</li>
-                            <li>Email: info@youraccommodation.com</li>
-                            <li>Contact Form: <a href="contact.html">Click here</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- 中国語 -->
-                <div class="language-section">
-                    <div class="language-header">中文</div>
-                    <div class="faq-text">
-                        <strong>回答：</strong><br>
-                        您可以通过以下方式联系我们：
-                        <ul>
-                            <li>电话: 012-345-6789</li>
-                            <li>Email: info@youraccommodation.com</li>
-                            <li>联系表单: <a href="contact.html">点击这里</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- 韓国語 -->
-                <div class="language-section">
-                    <div class="language-header">한국어</div>
-                    <div class="faq-text">
-                        <strong>답변:</strong><br>
-                        다음 방법으로 문의하실 수 있습니다:
-                        <ul>
-                            <li>전화: 012-345-6789</li>
-                            <li>Email: info@youraccommodation.com</li>
-                            <li>문의 양식: <a href="contact.html">여기 클릭</a></li>
-                        </ul>
-                    </div>
-                </div>
+                電話: 012-345-6789<br>
+                Email: info@youraccommodation.com<br>
+                <a href="contact.html">フォーム</a><br>
+                Phone: 012-345-6789<br>
+                Email: info@youraccommodation.com<br>
+                <a href="contact.html">Form</a><br>
+                电话: 012-345-6789<br>
+                Email: info@youraccommodation.com<br>
+                <a href="contact.html">表单</a><br>
+                전화: 012-345-6789<br>
+                Email: info@youraccommodation.com<br>
+                <a href="contact.html">양식</a>
             </div>
         </div>
     </div>
 
     <script>
+        // 全てのqa-buttonにクリックイベントを追加
         document.querySelectorAll('.qa-button').forEach(button => {
             button.addEventListener('click', () => {
                 const content = button.nextElementSibling;
                 const isExpanded = content.style.display === 'block';
                 
-                // すべてのコンテンツを閉じる
+                // 全てのコンテンツを閉じる
                 document.querySelectorAll('.qa-content').forEach(c => c.style.display = 'none');
                 document.querySelectorAll('.qa-button').forEach(b => b.classList.remove('active'));
 
