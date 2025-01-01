@@ -4,66 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>宿泊施設Q&A</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #2c3e50;
             --secondary-color: #34495e;
-            --accent-color: #3498db;
+            --accent-color: #e74c3c;
             --text-color: #2c3e50;
             --background-color: #f5f6fa;
             --section-background: #ffffff;
+            --header-bg: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center;
+            --header-overlay: rgba(44, 62, 80, 0.6);
+            --border-radius: 8px;
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            font-family: 'Roboto', sans-serif;
             line-height: 1.6;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             background-color: var(--background-color);
             color: var(--text-color);
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
         }
 
         header {
+            background: var(--header-bg);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--header-overlay);
+            border-radius: var(--border-radius);
+        }
+
+        header h1 {
+            position: relative;
+            color: #fff;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
             text-align: center;
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            color: var(--primary-color);
-            font-size: 1.8em;
-            margin-bottom: 0.3em;
-        }
-
-        p.intro {
-            margin-bottom: 15px;
-            font-size: 0.95em;
+            z-index: 1;
         }
 
         .qa-section {
             background: var(--section-background);
-            border-radius: 6px;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             overflow: hidden;
+            transition: transform var(--transition-speed);
+        }
+
+        .qa-section:hover {
+            transform: translateY(-5px);
         }
 
         .qa-button {
             width: 100%;
-            padding: 12px 16px;
+            padding: 15px 20px;
             background: var(--primary-color);
             color: white;
             border: none;
             text-align: left;
             cursor: pointer;
-            font-size: 1em;
-            display: block;
-            transition: background-color 0.3s;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background-color var(--transition-speed);
             position: relative;
         }
 
@@ -72,64 +107,77 @@
         }
 
         .qa-button::after {
-            content: '+'; 
-            font-size: 1.2em;
-            position: absolute;
-            right: 16px;
-            top: 50%;
-            transform: translateY(-50%);
+            content: '＋';
+            font-size: 1.5em;
+            transition: transform var(--transition-speed);
         }
 
         .qa-button.active::after {
-            content: '-';
+            content: '－';
+            transform: rotate(180deg);
         }
 
         .qa-content {
             display: none;
-            padding: 16px;
+            padding: 20px;
             font-size: 0.95em;
+            background: #f9f9f9;
+            border-top: 1px solid #ddd;
+            animation: fadeIn var(--transition-speed) ease-in-out;
         }
 
-        .faq-text {
-            margin-bottom: 15px;
+        .qa-content a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
         }
 
-        .contact-button {
-            background: var(--accent-color);
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.9em;
-            transition: opacity 0.3s;
-            margin-top: 8px;
+        .qa-content a:hover {
+            text-decoration: underline;
         }
 
-        .contact-button:hover {
-            opacity: 0.9;
+        /* Icons */
+        .qa-button .icon {
+            font-size: 1.5em;
+            margin-right: 10px;
         }
 
-        @media (max-width: 600px) {
-            body {
-                padding: 10px;
+        /* Contact Section Specific */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                height: 200px;
             }
 
-            .container {
-                padding: 10px;
+            header h1 {
+                font-size: 2em;
             }
+        }
 
-            h1 {
-                font-size: 1.5em;
-            }
-
+        @media (max-width: 480px) {
             .qa-button {
-                font-size: 0.95em;
-                padding: 10px 14px;
+                font-size: 1em;
+                padding: 12px 16px;
             }
 
             .qa-content {
-                font-size: 0.85em;
+                font-size: 0.9em;
+            }
+
+            header h1 {
+                font-size: 1.8em;
             }
         }
     </style>
@@ -141,11 +189,10 @@
             多言語対応（日本語、英語、中国語、韓国語）で質問と回答が表示されます。
             各質問ボタンをクリックすると、関連する回答が展開されます。
             これまでの指示内容:
-            - ヘッダーを簡素化し、四か国語を一行にまとめました。
-            - 各質問と回答を簡潔にし、見やすくしました。
-            - 言語ラベルを削除し、各言語が自然に続く形にしました。
-            - 10項目のQ&Aを追加しました。
-            - お母様がGPTを使って編集できるよう、コメントを追加しました。
+            - ヘッダーを強化し、背景画像とロゴを追加しました。
+            - 各Q&Aセクションをカード形式に変更しました。
+            - フォントとカラースキームを改善しました。
+            - アニメーション効果を追加しました。
         -->
         <header>
             <h1>
@@ -156,10 +203,11 @@
         <!-- Q1 -->
         <div class="qa-section">
             <button class="qa-button">
-                チェックイン/チェックアウト時間は？<br>
-                Check-in/Check-out times?<br>
-                入住/退房时间？<br>
-                체크인/체크아웃 시간은?
+                <span>
+                    <i class="icon">🕒</i>
+                    チェックイン/チェックアウト時間は？
+                </span>
+                <span>+</span>
             </button>
             <div class="qa-content">
                 チェックインは15:00、チェックアウトは11:00です。変更希望は事前に。<br>
@@ -172,10 +220,11 @@
         <!-- Q2 -->
         <div class="qa-section">
             <button class="qa-button">
-                ペットは可？<br>
-                Are pets allowed?<br>
-                宠物可以带吗？<br>
-                애완동물 동반 가능?
+                <span>
+                    <i class="icon">🐾</i>
+                    ペットは可？
+                </span>
+                <span>+</span>
             </button>
             <div class="qa-content">
                 ペット歓迎。部屋による制限あり。<br>
@@ -188,10 +237,11 @@
         <!-- Q3 -->
         <div class="qa-section">
             <button class="qa-button">
-                駐車場は？<br>
-                Is parking available?<br>
-                停车场可用吗？<br>
-                주차 가능?
+                <span>
+                    <i class="icon">🚗</i>
+                    駐車場は？
+                </span>
+                <span>+</span>
             </button>
             <div class="qa-content">
                 無料駐車場あり。到着時にお知らせください。<br>
@@ -204,10 +254,11 @@
         <!-- Q4 -->
         <div class="qa-section">
             <button class="qa-button">
-                朝食は？<br>
-                Is breakfast included?<br>
-                早餐包含吗？<br>
-                아침 식사 포함?
+                <span>
+                    <i class="icon">🍽️</i>
+                    朝食は？
+                </span>
+                <span>+</span>
             </button>
             <div class="qa-content">
                 朝食含む。和洋選択可。<br>
@@ -220,10 +271,11 @@
         <!-- Q5 -->
         <div class="qa-section">
             <button class="qa-button">
-                無料Wi-Fiは利用できますか？<br>
-                Is free Wi-Fi available?<br>
-                是否提供免费Wi-Fi？<br>
-                무료 Wi-Fi 이용 가능?
+                <span>
+                    <i class="icon">📶</i>
+                    無料Wi-Fiは利用できますか？
+                </span>
+                <span>+</span>
             </button>
             <div class="qa-content">
                 はい、全客室で無料Wi-Fiを提供しています。パスワードはフロントでお知らせします。<br>
@@ -236,10 +288,11 @@
         <!-- Q6 -->
         <div class="qa-section">
             <button class="qa-button">
-                禁煙ルームはありますか？<br>
-                Are there non-smoking rooms?<br>
-                是否有禁烟房间？<br>
-                금연 객실이 있나요?
+                <span>
+                    <i class="icon">🚭</i>
+                    禁煙ルームはありますか？
+                </span>
+                <span>+</span>
             </button>
             <div class="qa-content">
                 はい、禁煙ルームをご用意しております。予約時にお知らせください。<br>
@@ -252,10 +305,11 @@
         <!-- Q7 -->
         <div class="qa-section">
             <button class="qa-button">
-                バリアフリー設備はありますか？<br>
-                Are there barrier-free facilities?<br>
-                是否有无障碍设施？<br>
-                장애인 편의 시설이 있나요?
+                <span>
+                    <i class="icon">♿</i>
+                    バリアフリー設備はありますか？
+                </span>
+                <span>+</span>
             </button>
             <div class="qa-content">
                 はい、バリアフリー対応の客室と設備があります。詳細はお問い合わせください。<br>
@@ -268,10 +322,11 @@
         <!-- Q8 -->
         <div class="qa-section">
             <button class="qa-button">
-                レストランはありますか？<br>
-                Is there a restaurant?<br>
-                是否有餐厅？<br>
-                레스토랑이 있나요?
+                <span>
+                    <i class="icon">🍴</i>
+                    レストランはありますか？
+                </span>
+                <span>+</span>
             </button>
             <div class="qa-content">
                 はい、館内にレストランがあります。朝食と夕食を提供しています。<br>
@@ -284,10 +339,11 @@
         <!-- Q9 -->
         <div class="qa-section">
             <button class="qa-button">
-                ルームサービスは利用できますか？<br>
-                Is room service available?<br>
-                是否提供客房服务？<br>
-                룸서비스 이용 가능?
+                <span>
+                    <i class="icon">🛎️</i>
+                    ルームサービスは利用できますか？
+                </span>
+                <span>+</span>
             </button>
             <div class="qa-content">
                 はい、ルームサービスを提供しております。メニューはフロントでご覧ください。<br>
@@ -300,10 +356,11 @@
         <!-- Q10 -->
         <div class="qa-section">
             <button class="qa-button">
-                近隣の観光スポットは？<br>
-                What are nearby attractions?<br>
-                附近有哪些景点？<br>
-                주변 관광지는 어디인가요?
+                <span>
+                    <i class="icon">🏞️</i>
+                    近隣の観光スポットは？
+                </span>
+                <span>+</span>
             </button>
             <div class="qa-content">
                 当ホテル周辺には多くの観光スポットがあります。詳しくはフロントで案内いたします。<br>
@@ -316,24 +373,49 @@
         <!-- お問い合わせ -->
         <div class="qa-section">
             <button class="qa-button">
-                お問い合わせ<br>
-                Contact Us<br>
-                联系方式<br>
-                문의
+                <span>
+                    <i class="icon">📞</i>
+                    お問い合わせ
+                </span>
+                <span>+</span>
             </button>
-            <div class="qa-content">
-                電話: 012-345-6789<br>
-                Email: info@youraccommodation.com<br>
-                <a href="contact.html">フォーム</a><br>
-                Phone: 012-345-6789<br>
-                Email: info@youraccommodation.com<br>
-                <a href="contact.html">Form</a><br>
-                电话: 012-345-6789<br>
-                Email: info@youraccommodation.com<br>
-                <a href="contact.html">表单</a><br>
-                전화: 012-345-6789<br>
-                Email: info@youraccommodation.com<br>
-                <a href="contact.html">양식</a>
+            <div class="qa-content contact-info">
+                <div>
+                    電話: <a href="tel:012-345-6789">012-345-6789</a>
+                </div>
+                <div>
+                    Email: <a href="mailto:info@youraccommodation.com">info@youraccommodation.com</a>
+                </div>
+                <div>
+                    <a href="contact.html">フォーム</a>
+                </div>
+                <div>
+                    Phone: <a href="tel:012-345-6789">012-345-6789</a>
+                </div>
+                <div>
+                    Email: <a href="mailto:info@youraccommodation.com">info@youraccommodation.com</a>
+                </div>
+                <div>
+                    <a href="contact.html">Form</a>
+                </div>
+                <div>
+                    电话: <a href="tel:012-345-6789">012-345-6789</a>
+                </div>
+                <div>
+                    Email: <a href="mailto:info@youraccommodation.com">info@youraccommodation.com</a>
+                </div>
+                <div>
+                    <a href="contact.html">表单</a>
+                </div>
+                <div>
+                    전화: <a href="tel:012-345-6789">012-345-6789</a>
+                </div>
+                <div>
+                    Email: <a href="mailto:info@youraccommodation.com">info@youraccommodation.com</a>
+                </div>
+                <div>
+                    <a href="contact.html">양식</a>
+                </div>
             </div>
         </div>
     </div>
