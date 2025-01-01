@@ -72,12 +72,12 @@
 
         .main-qa-button {
             width: 100%;
-            padding: 15px 20px;
+            padding: 12px 16px;
             background-color: var(--primary-color);
             color: var(--header-text-color);
             border: none;
             border-radius: 5px;
-            font-size: 18px;
+            font-size: 16px;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -90,19 +90,21 @@
         }
 
         .main-qa-button i {
-            margin-right: 10px;
-            font-size: 20px;
+            font-size: 18px;
         }
 
         .main-qa-button .button-label {
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+            flex-direction: row;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 5px;
         }
 
         .main-qa-button .button-label span {
-            font-size: 14px;
+            font-size: 12px;
             line-height: 1.2;
+            white-space: nowrap;
         }
 
         .main-qa-button .arrow {
@@ -117,23 +119,23 @@
         /* レベル2のサブセクションコンテナ */
         .sub-qa-container {
             display: none;
-            margin-top: 10px;
+            margin-top: 8px;
             padding-left: 20px;
         }
 
         /* レベル2のサブセクション */
         .sub-qa-section {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .sub-qa-button {
             width: 100%;
-            padding: 12px 18px;
+            padding: 10px 14px;
             background-color: #f9f9f9;
             color: var(--text-color);
             border: none;
             border-radius: 5px;
-            font-size: 16px;
+            font-size: 14px;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -146,19 +148,21 @@
         }
 
         .sub-qa-button i {
-            margin-right: 8px;
-            font-size: 18px;
+            font-size: 16px;
         }
 
         .sub-qa-button .button-label {
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+            flex-direction: row;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 5px;
         }
 
         .sub-qa-button .button-label span {
-            font-size: 14px;
+            font-size: 12px;
             line-height: 1.2;
+            white-space: nowrap;
         }
 
         .sub-qa-button .arrow {
@@ -173,25 +177,26 @@
         /* レベル3のQ&Aコンテンツ */
         .qa-content {
             display: none;
-            padding: 10px 15px;
+            padding: 8px 12px;
             background-color: #fafafa;
             border-left: 2px solid var(--accent-color);
-            margin-top: 8px;
+            margin-top: 6px;
             border-radius: 4px;
+            font-size: 12px; /* 文字サイズを小さく */
         }
 
         .qa-content p {
-            margin: 5px 0;
+            margin: 4px 0;
         }
 
         .qa-content ul {
-            margin: 10px 0 0 20px;
+            margin: 8px 0 0 16px;
             padding: 0;
         }
 
         .qa-content ul li {
             list-style-type: disc;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
 
         /* レスポンシブデザイン */
@@ -209,22 +214,22 @@
             }
 
             .main-qa-button {
-                font-size: 16px;
-                padding: 12px 16px;
+                font-size: 14px;
+                padding: 10px 12px;
             }
 
             .sub-qa-button {
-                font-size: 14px;
-                padding: 10px 14px;
+                font-size: 12px;
+                padding: 8px 10px;
             }
 
             .qa-content {
-                font-size: 13px;
+                font-size: 10px; /* 更に小さく */
             }
 
             .main-qa-button i,
             .sub-qa-button i {
-                font-size: 18px;
+                font-size: 16px;
             }
 
             .main-qa-button .arrow,
@@ -234,7 +239,7 @@
 
             .main-qa-button .button-label span,
             .sub-qa-button .button-label span {
-                font-size: 12px;
+                font-size: 10px;
             }
         }
     </style>
@@ -243,287 +248,14 @@
     <div class="container">
         <h1>施設のQ&A</h1>
 
-        <!-- 新しいセクション: 施設概要 -->
-        <div class="about-section">
-            <h2>施設概要</h2>
-            <p>
-                <strong>日本語:</strong><br>
-                当ホテルは、最新の設備と伝統的な日本のもてなしを融合させた最高級の宿泊施設です。快適な客室と多彩なサービスを提供し、お客様に素晴らしい滞在体験をお約束します。
-            </p>
-            <p>
-                <strong>English:</strong><br>
-                Our hotel is a premier accommodation facility that blends the latest amenities with traditional Japanese hospitality. We offer comfortable rooms and a variety of services to ensure a wonderful stay experience for our guests.
-            </p>
-            <p>
-                <strong>中文:</strong><br>
-                我们的酒店是一家将最新设施与传统日本款待相结合的高级住宿设施。我们提供舒适的客房和多样化的服务，确保客人拥有美好的入住体验。
-            </p>
-            <p>
-                <strong>한국어:</strong><br>
-                저희 호텔은 최신 시설과 전통적인 일본의 환대를 결합한 최고급 숙박 시설입니다. 편안한 객실과 다양한 서비스를 제공하여 고객님께 멋진 숙박 경험을 약속드립니다.
-            </p>
-        </div>
-
-        <!-- ★ レベル1: 施設のQ&A -->
-        <div class="main-qa-section">
-            <button class="main-qa-button">
-                <div>
-                    <i class="fa-solid fa-child"></i>
-                    <div class="button-label">
-                        <span>施設のQ&A</span>
-                        <span>Facility Q&A</span>
-                        <span>设施Q&A</span>
-                        <span>시설 Q&A</span>
-                    </div>
-                </div>
-                <i class="fa-solid fa-chevron-right arrow"></i>
-            </button>
-            <div class="sub-qa-container">
-                <!-- ★ レベル2: 子供用アメニティ -->
-                <div class="sub-qa-section">
-                    <button class="sub-qa-button">
-                        <div>
-                            <i class="fa-solid fa-child"></i>
-                            <div class="button-label">
-                                <span>子供用アメニティ</span>
-                                <span>Child Amenities</span>
-                                <span>儿童设施</span>
-                                <span>어린이 시설</span>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-chevron-right arrow"></i>
-                    </button>
-                    <div class="qa-content">
-                        <p>
-                            <strong>日本語:</strong><br>
-                            お子様連れのお客様にも安心しておくつろぎいただけますよう、以下のアイテムをご用意しております。
-                        </p>
-                        <ul>
-                            <li>ベビーベッド（10か月未満のお子様用）</li>
-                            <li>ベッドガード</li>
-                            <li>お子様用アメニティ（歯ブラシ、スリッパ、ミニハンカチ、ボディウォッシュ、ボディースポンジの5点セット）</li>
-                            <li>お子さま用パジャマ（S:115cm、M:130cm、L:145cm）</li>
-                            <li>コップ</li>
-                            <li>ふみ台</li>
-                            <li>補助便座</li>
-                            <li>おむつ用ゴミ箱</li>
-                        </ul>
-                        <p>
-                            ※数に限りがあるものもございますので、ご予約時にあわせてお申し付けください。
-                        </p>
-                    </div>
-                </div>
-
-                <!-- ★ レベル2: 子供を預けるサービス -->
-                <div class="sub-qa-section">
-                    <button class="sub-qa-button">
-                        <div>
-                            <i class="fa-solid fa-baby"></i>
-                            <div class="button-label">
-                                <span>子供を預けるサービス</span>
-                                <span>Childcare Services</span>
-                                <span>托儿服务</span>
-                                <span>어린이 맡기기 서비스</span>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-chevron-right arrow"></i>
-                    </button>
-                    <div class="qa-content">
-                        <p>
-                            <strong>日本語:</strong><br>
-                            託児サービスは現在ご用意しておりません。
-                        </p>
-                    </div>
-                </div>
-
-                <!-- ★ レベル2: 授乳室 -->
-                <div class="sub-qa-section">
-                    <button class="sub-qa-button">
-                        <div>
-                            <i class="fa-solid fa-breastfeeding"></i>
-                            <div class="button-label">
-                                <span>授乳室</span>
-                                <span>Breastfeeding Room</span>
-                                <span>哺乳室</span>
-                                <span>수유실</span>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-chevron-right arrow"></i>
-                    </button>
-                    <div class="qa-content">
-                        <p>
-                            <strong>日本語:</strong><br>
-                            授乳室は以下の場所にございます：
-                        </p>
-                        <ul>
-                            <li>本館2階 宴会場近く</li>
-                            <li>新館1階 ロビー横</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- ★ レベル2: おむつ替え場所 -->
-                <div class="sub-qa-section">
-                    <button class="sub-qa-button">
-                        <div>
-                            <i class="fa-solid fa-diaper"></i>
-                            <div class="button-label">
-                                <span>おむつ替え場所</span>
-                                <span>Diaper Changing Area</span>
-                                <span>换尿布区域</span>
-                                <span>기저귀 교체 장소</span>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-chevron-right arrow"></i>
-                    </button>
-                    <div class="qa-content">
-                        <p>
-                            <strong>日本語:</strong><br>
-                            おむつ交換台は以下の化粧室にご用意しております：
-                        </p>
-                        <ul>
-                            <li>本館2階 宴会場光の間前</li>
-                            <li>2階・3階 宴会場</li>
-                            <li>本館17階 インペリアルラウンジ アクア前</li>
-                        </ul>
-                        <p>
-                            ※場所によってご利用いただける時間が異なります。スタッフにお尋ねください。
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ★ レベル1: 宿泊に関するQ&A -->
-        <div class="main-qa-section">
-            <button class="main-qa-button">
-                <div>
-                    <i class="fa-solid fa-bed"></i>
-                    <div class="button-label">
-                        <span>宿泊に関するQ&A</span>
-                        <span>Accommodation Q&A</span>
-                        <span>住宿相关Q&A</span>
-                        <span>숙박에 관한 Q&A</span>
-                    </div>
-                </div>
-                <i class="fa-solid fa-chevron-right arrow"></i>
-            </button>
-            <div class="sub-qa-container">
-                <!-- ★ レベル2: チェックイン/チェックアウト -->
-                <div class="sub-qa-section">
-                    <button class="sub-qa-button">
-                        <div>
-                            <i class="fa-solid fa-clock"></i>
-                            <div class="button-label">
-                                <span>チェックイン/チェックアウト</span>
-                                <span>Check-in/Check-out</span>
-                                <span>入住/退房</span>
-                                <span>체크인/체크아웃</span>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-chevron-right arrow"></i>
-                    </button>
-                    <div class="qa-content">
-                        <p>
-                            <strong>日本語:</strong><br>
-                            チェックインは15:00、チェックアウトは11:00です。変更希望は事前にご連絡ください。
-                        </p>
-                        <p>
-                            <strong>English:</strong><br>
-                            Check-in is at 3 PM and check-out is at 11 AM. Please contact us in advance if you wish to change these times.
-                        </p>
-                        <p>
-                            <strong>中文:</strong><br>
-                            入住时间为下午3点，退房时间为上午11点。如需更改，请提前联系我们。
-                        </p>
-                        <p>
-                            <strong>한국어:</strong><br>
-                            체크인은 오후 3시, 체크아웃은 오전 11시입니다. 변경을 원하시면 사전에 연락해주세요.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- ★ レベル2: 部屋のアップグレード -->
-                <div class="sub-qa-section">
-                    <button class="sub-qa-button">
-                        <div>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                            <div class="button-label">
-                                <span>部屋のアップグレード</span>
-                                <span>Room Upgrade</span>
-                                <span>房间升级</span>
-                                <span>룸 업그레이드</span>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-chevron-right arrow"></i>
-                    </button>
-                    <div class="qa-content">
-                        <p>
-                            <strong>日本語:</strong><br>
-                            空室状況により部屋のアップグレードが可能です。ご希望の場合は事前にお知らせください。
-                        </p>
-                        <p>
-                            <strong>English:</strong><br>
-                            Room upgrades are available based on availability. Please inform us in advance if you wish to upgrade.
-                        </p>
-                        <p>
-                            <strong>中文:</strong><br>
-                            根据房间空闲情况，可以进行房间升级。如需升级，请提前告知。
-                        </p>
-                        <p>
-                            <strong>한국어:</strong><br>
-                            객실 상황에 따라 룸 업그레이드가 가능합니다. 원하시는 경우 미리 알려주세요.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- ★ レベル2: キャンセルポリシー -->
-                <div class="sub-qa-section">
-                    <button class="sub-qa-button">
-                        <div>
-                            <i class="fa-solid fa-ban-concierge-bell"></i>
-                            <div class="button-label">
-                                <span>キャンセルポリシー</span>
-                                <span>Cancellation Policy</span>
-                                <span>取消政策</span>
-                                <span>취소 정책</span>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-chevron-right arrow"></i>
-                    </button>
-                    <div class="qa-content">
-                        <p>
-                            <strong>日本語:</strong><br>
-                            キャンセルは宿泊日の3日前まで無料で可能です。それ以降のキャンセルには料金が発生します。
-                        </p>
-                        <p>
-                            <strong>English:</strong><br>
-                            Cancellations are free up to three days before the stay date. Charges apply for cancellations made after that.
-                        </p>
-                        <p>
-                            <strong>中文:</strong><br>
-                            取消可在入住日期前三天免费。之后的取消将产生费用。
-                        </p>
-                        <p>
-                            <strong>한국어:</strong><br>
-                            취소는 숙박일 3일 전까지는 무료입니다. 그 이후의 취소는 요금이 부과됩니다.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- ★ レベル1: レストランに関するQ&A -->
         <div class="main-qa-section">
             <button class="main-qa-button">
-                <div>
-                    <i class="fa-solid fa-utensils"></i>
-                    <div class="button-label">
-                        <span>レストランに関するQ&A</span>
-                        <span>Restaurant Q&A</span>
-                        <span>餐厅Q&A</span>
-                        <span>레스토랑 Q&A</span>
-                    </div>
+                <div class="button-label">
+                    <span>レストランに関するQ&A</span>
+                    <span>Restaurant Q&A</span>
+                    <span>餐厅Q&A</span>
+                    <span>레스토랑 Q&A</span>
                 </div>
                 <i class="fa-solid fa-chevron-right arrow"></i>
             </button>
@@ -531,32 +263,25 @@
                 <!-- ★ レベル2: 営業時間 -->
                 <div class="sub-qa-section">
                     <button class="sub-qa-button">
-                        <div>
-                            <i class="fa-solid fa-clock"></i>
-                            <div class="button-label">
-                                <span>レストランの営業時間</span>
-                                <span>Restaurant Hours</span>
-                                <span>餐厅营业时间</span>
-                                <span>레스토랑 영업시간</span>
-                            </div>
+                        <div class="button-label">
+                            <span>レストランの営業時間</span>
+                            <span>Restaurant Hours</span>
+                            <span>餐厅营业时间</span>
+                            <span>레스토랑 영업시간</span>
                         </div>
                         <i class="fa-solid fa-chevron-right arrow"></i>
                     </button>
                     <div class="qa-content">
                         <p>
-                            <strong>日本語:</strong><br>
                             レストランの営業時間は、朝7時から夜10時までです。
                         </p>
                         <p>
-                            <strong>English:</strong><br>
                             The restaurant is open from 7 AM to 10 PM.
                         </p>
                         <p>
-                            <strong>中文:</strong><br>
                             餐厅营业时间为早上7点至晚上10点。
                         </p>
                         <p>
-                            <strong>한국어:</strong><br>
                             레스토랑의 운영 시간은 오전 7시부터 오후 10시까지입니다.
                         </p>
                     </div>
@@ -565,32 +290,25 @@
                 <!-- ★ レベル2: 予約の必要性 -->
                 <div class="sub-qa-section">
                     <button class="sub-qa-button">
-                        <div>
-                            <i class="fa-solid fa-calendar-check"></i>
-                            <div class="button-label">
-                                <span>予約の必要性</span>
-                                <span>Reservation Requirement</span>
-                                <span>需要预订</span>
-                                <span>예약 필요성</span>
-                            </div>
+                        <div class="button-label">
+                            <span>予約の必要性</span>
+                            <span>Reservation Requirement</span>
+                            <span>需要预订</span>
+                            <span>예약 필요성</span>
                         </div>
                         <i class="fa-solid fa-chevron-right arrow"></i>
                     </button>
                     <div class="qa-content">
                         <p>
-                            <strong>日本語:</strong><br>
                             人気の時間帯は予約をお勧めしますが、予約なしでもご利用いただけます。
                         </p>
                         <p>
-                            <strong>English:</strong><br>
                             Reservations are recommended during peak hours, but you can dine without a reservation.
                         </p>
                         <p>
-                            <strong>中文:</strong><br>
                             在高峰时段建议预订，但也可以不预订就用餐。
                         </p>
                         <p>
-                            <strong>한국어:</strong><br>
                             피크 시간대에는 예약을 권장하지만, 예약 없이도 이용하실 수 있습니다.
                         </p>
                     </div>
@@ -599,32 +317,25 @@
                 <!-- ★ レベル2: 特別な食事制限 -->
                 <div class="sub-qa-section">
                     <button class="sub-qa-button">
-                        <div>
-                            <i class="fa-solid fa-drumstick-bite"></i>
-                            <div class="button-label">
-                                <span>特別な食事制限</span>
-                                <span>Special Dietary Restrictions</span>
-                                <span>特别饮食限制</span>
-                                <span>특별한 식사 제한</span>
-                            </div>
+                        <div class="button-label">
+                            <span>特別な食事制限</span>
+                            <span>Special Dietary Restrictions</span>
+                            <span>特别饮食限制</span>
+                            <span>특별한 식사 제한</span>
                         </div>
                         <i class="fa-solid fa-chevron-right arrow"></i>
                     </button>
                     <div class="qa-content">
                         <p>
-                            <strong>日本語:</strong><br>
                             アレルギーや特定の食事制限に対応したメニューをご用意しております。ご予約時にお知らせください。
                         </p>
                         <p>
-                            <strong>English:</strong><br>
                             We offer menus that accommodate allergies and specific dietary restrictions. Please inform us when making a reservation.
                         </p>
                         <p>
-                            <strong>中文:</strong><br>
                             我们提供适应过敏和特定饮食限制的菜单。请在预订时告知。
                         </p>
                         <p>
-                            <strong>한국어:</strong><br>
                             알레르기 및 특정 식이 제한에 맞는 메뉴를 제공합니다. 예약 시 알려주세요.
                         </p>
                     </div>
@@ -635,14 +346,11 @@
         <!-- ★ レベル1: アメニティに関するQ&A -->
         <div class="main-qa-section">
             <button class="main-qa-button">
-                <div>
-                    <i class="fa-solid fa-shower"></i>
-                    <div class="button-label">
-                        <span>アメニティに関するQ&A</span>
-                        <span>Amenities Q&A</span>
-                        <span>设施Q&A</span>
-                        <span>어메니티 Q&A</span>
-                    </div>
+                <div class="button-label">
+                    <span>アメニティに関するQ&A</span>
+                    <span>Amenities Q&A</span>
+                    <span>设施Q&A</span>
+                    <span>어메니티 Q&A</span>
                 </div>
                 <i class="fa-solid fa-chevron-right arrow"></i>
             </button>
@@ -650,32 +358,25 @@
                 <!-- ★ レベル2: 無料Wi-Fi -->
                 <div class="sub-qa-section">
                     <button class="sub-qa-button">
-                        <div>
-                            <i class="fa-solid fa-wifi"></i>
-                            <div class="button-label">
-                                <span>無料Wi-Fi</span>
-                                <span>Free Wi-Fi</span>
-                                <span>免费Wi-Fi</span>
-                                <span>무료 Wi-Fi</span>
-                            </div>
+                        <div class="button-label">
+                            <span>無料Wi-Fi</span>
+                            <span>Free Wi-Fi</span>
+                            <span>免费Wi-Fi</span>
+                            <span>무료 Wi-Fi</span>
                         </div>
                         <i class="fa-solid fa-chevron-right arrow"></i>
                     </button>
                     <div class="qa-content">
                         <p>
-                            <strong>日本語:</strong><br>
                             はい、全客室で無料Wi-Fiを提供しています。パスワードはフロントでお知らせします。
                         </p>
                         <p>
-                            <strong>English:</strong><br>
                             Yes, free Wi-Fi is available in all rooms. Password provided at the front desk.
                         </p>
                         <p>
-                            <strong>中文:</strong><br>
                             是的，所有客房均提供免费Wi-Fi。密码将在前台提供。
                         </p>
                         <p>
-                            <strong>한국어:</strong><br>
                             네, 모든 객실에서 무료 Wi-Fi를 제공합니다. 비밀번호는 프론트에서 알려드립니다.
                         </p>
                     </div>
@@ -684,32 +385,25 @@
                 <!-- ★ レベル2: ルームサービス -->
                 <div class="sub-qa-section">
                     <button class="sub-qa-button">
-                        <div>
-                            <i class="fa-solid fa-concierge-bell"></i>
-                            <div class="button-label">
-                                <span>ルームサービス</span>
-                                <span>Room Service</span>
-                                <span>客房服务</span>
-                                <span>룸서비스</span>
-                            </div>
+                        <div class="button-label">
+                            <span>ルームサービス</span>
+                            <span>Room Service</span>
+                            <span>客房服务</span>
+                            <span>룸서비스</span>
                         </div>
                         <i class="fa-solid fa-chevron-right arrow"></i>
                     </button>
                     <div class="qa-content">
                         <p>
-                            <strong>日本語:</strong><br>
                             はい、ルームサービスを提供しております。メニューはフロントでご覧ください。
                         </p>
                         <p>
-                            <strong>English:</strong><br>
                             Yes, room service is available. Please check the menu at the front desk.
                         </p>
                         <p>
-                            <strong>中文:</strong><br>
                             是的，我们提供客房服务。菜单请在前台查看。
                         </p>
                         <p>
-                            <strong>한국어:</strong><br>
                             네, 룸서비스를 이용할 수 있습니다. 메뉴는 프론트에서 확인해주세요.
                         </p>
                     </div>
@@ -718,32 +412,25 @@
                 <!-- ★ レベル2: フィットネスセンター -->
                 <div class="sub-qa-section">
                     <button class="sub-qa-button">
-                        <div>
-                            <i class="fa-solid fa-dumbbell"></i>
-                            <div class="button-label">
-                                <span>フィットネスセンター</span>
-                                <span>Fitness Center</span>
-                                <span>健身中心</span>
-                                <span>피트니스 센터</span>
-                            </div>
+                        <div class="button-label">
+                            <span>フィットネスセンター</span>
+                            <span>Fitness Center</span>
+                            <span>健身中心</span>
+                            <span>피트니스 센터</span>
                         </div>
                         <i class="fa-solid fa-chevron-right arrow"></i>
                     </button>
                     <div class="qa-content">
                         <p>
-                            <strong>日本語:</strong><br>
                             フィットネスセンターは24時間利用可能です。鍵はフロントでお受け取りください。
                         </p>
                         <p>
-                            <strong>English:</strong><br>
                             The fitness center is available 24/7. Please receive the key at the front desk.
                         </p>
                         <p>
-                            <strong>中文:</strong><br>
                             健身中心全天候开放。请在前台领取钥匙。
                         </p>
                         <p>
-                            <strong>한국어:</strong><br>
                             피트니스 센터는 24시간 이용 가능합니다. 키는 프론트에서 받아주세요.
                         </p>
                     </div>
@@ -754,52 +441,42 @@
         <!-- ★ レベル1: お問い合わせ -->
         <div class="main-qa-section">
             <button class="main-qa-button">
-                <div>
-                    <i class="fa-solid fa-envelope"></i>
-                    <div class="button-label">
-                        <span>お問い合わせ</span>
-                        <span>Contact Us</span>
-                        <span>联系我们</span>
-                        <span>문의하기</span>
-                    </div>
+                <div class="button-label">
+                    <span>お問い合わせ</span>
+                    <span>Contact Us</span>
+                    <span>联系我们</span>
+                    <span>문의하기</span>
                 </div>
                 <i class="fa-solid fa-chevron-right arrow"></i>
             </button>
             <div class="sub-qa-container">
                 <div class="sub-qa-section">
                     <button class="sub-qa-button">
-                        <div>
-                            <i class="fa-solid fa-phone"></i>
-                            <div class="button-label">
-                                <span>連絡先</span>
-                                <span>Contact Information</span>
-                                <span>联系方式</span>
-                                <span>연락처</span>
-                            </div>
+                        <div class="button-label">
+                            <span>連絡先</span>
+                            <span>Contact Information</span>
+                            <span>联系方式</span>
+                            <span>연락처</span>
                         </div>
                         <i class="fa-solid fa-chevron-right arrow"></i>
                     </button>
                     <div class="qa-content">
                         <p>
-                            <strong>日本語:</strong><br>
                             電話: 012-345-6789<br>
                             Email: info@youraccommodation.com<br>
                             <a href="contact.html">フォーム</a>
                         </p>
                         <p>
-                            <strong>English:</strong><br>
                             Phone: 012-345-6789<br>
                             Email: info@youraccommodation.com<br>
                             <a href="contact.html">Form</a>
                         </p>
                         <p>
-                            <strong>中文:</strong><br>
                             电话: 012-345-6789<br>
                             Email: info@youraccommodation.com<br>
                             <a href="contact.html">表单</a>
                         </p>
                         <p>
-                            <strong>한국어:</strong><br>
                             전화: 012-345-6789<br>
                             Email: info@youraccommodation.com<br>
                             <a href="contact.html">양식</a>
@@ -859,5 +536,6 @@
     </script>
 </body>
 </html>
+
 
 
