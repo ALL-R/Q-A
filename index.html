@@ -11,14 +11,24 @@
     <style>
         :root {
             --primary-color: #856C34; /* テーマカラー */
-            --secondary-color: #5D4B1E; /* ダークトーンのセカンダリーカラー */
+            --secondary-button-color: #8c877a; /* レベル2ボタンの色 */
             --accent-color: #A88F48; /* アクセントカラー */
             --text-color: #2c3e50;
             --background-color: #f5f6fa;
             --section-background: #ffffff;
             --header-background: #856C34; /* ヘッダーの背景色をテーマカラーに */
             --header-text-color: #ffffff; /* ヘッダーのテキスト色を白に */
-            --button-hover-color: #5D4B1E; /* ボタンホバー時の色 */
+            --button-hover-color: #5D4B1E; /* レベル1ボタンホバー時の色 */
+            --sub-button-hover-color: #d4b276; /* レベル2ボタンホバー時の色 */
+        }
+
+        /* スクロールバーを非表示にする */
+        .container {
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none;  /* IE and Edge */
+        }
+        .container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari and Opera */
         }
 
         body {
@@ -36,6 +46,7 @@
             background-color: var(--section-background);
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden; /* スクロールバー非表示 */
         }
 
         h1 {
@@ -89,27 +100,23 @@
             background-color: var(--button-hover-color);
         }
 
-        .main-qa-button i {
+        .main-qa-button .left-icon {
+            margin-right: 10px;
             font-size: 18px;
         }
 
         .main-qa-button .button-label {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 5px;
-        }
-
-        .main-qa-button .button-label span {
-            font-size: 12px;
-            line-height: 1.2;
+            flex-grow: 1;
+            text-align: left;
             white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .main-qa-button .arrow {
             font-size: 16px;
             transition: transform 0.3s;
+            margin-left: 10px;
         }
 
         .main-qa-button.active .arrow {
@@ -131,8 +138,8 @@
         .sub-qa-button {
             width: 100%;
             padding: 10px 14px;
-            background-color: #f9f9f9;
-            color: var(--text-color);
+            background-color: var(--secondary-button-color);
+            color: var(--header-text-color);
             border: none;
             border-radius: 5px;
             font-size: 14px;
@@ -144,30 +151,21 @@
         }
 
         .sub-qa-button:hover {
-            background-color: #e0e0e0;
-        }
-
-        .sub-qa-button i {
-            font-size: 16px;
+            background-color: var(--sub-button-hover-color);
         }
 
         .sub-qa-button .button-label {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 5px;
-        }
-
-        .sub-qa-button .button-label span {
-            font-size: 12px;
-            line-height: 1.2;
+            flex-grow: 1;
+            text-align: left;
             white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .sub-qa-button .arrow {
             font-size: 14px;
             transition: transform 0.3s;
+            margin-left: 10px;
         }
 
         .sub-qa-button.active .arrow {
@@ -218,28 +216,36 @@
                 padding: 10px 12px;
             }
 
+            .main-qa-button .left-icon {
+                font-size: 16px;
+                margin-right: 8px;
+            }
+
+            .main-qa-button .arrow {
+                font-size: 12px;
+                margin-left: 8px;
+            }
+
+            .main-qa-button .button-label {
+                font-size: 12px;
+            }
+
             .sub-qa-button {
                 font-size: 12px;
                 padding: 8px 10px;
             }
 
-            .qa-content {
-                font-size: 10px; /* 更に小さく */
-            }
-
-            .main-qa-button i,
-            .sub-qa-button i {
-                font-size: 16px;
-            }
-
-            .main-qa-button .arrow,
             .sub-qa-button .arrow {
+                font-size: 12px;
+                margin-left: 8px;
+            }
+
+            .sub-qa-button .button-label {
                 font-size: 12px;
             }
 
-            .main-qa-button .button-label span,
-            .sub-qa-button .button-label span {
-                font-size: 10px;
+            .qa-content {
+                font-size: 10px; /* 更に小さく */
             }
         }
     </style>
@@ -248,14 +254,12 @@
     <div class="container">
         <h1>施設のQ&A</h1>
 
-        <!-- ★ レベル1: レストランに関するQ&A -->
+        <!-- ★ レベル1: レストラン -->
         <div class="main-qa-section">
             <button class="main-qa-button">
+                <i class="fa-solid fa-utensils left-icon"></i>
                 <div class="button-label">
-                    <span>レストランに関するQ&A</span>
-                    <span>Restaurant Q&A</span>
-                    <span>餐厅Q&A</span>
-                    <span>레스토랑 Q&A</span>
+                    レストラン | Restaurant | 餐厅 | 레스토랑
                 </div>
                 <i class="fa-solid fa-chevron-right arrow"></i>
             </button>
@@ -264,10 +268,7 @@
                 <div class="sub-qa-section">
                     <button class="sub-qa-button">
                         <div class="button-label">
-                            <span>レストランの営業時間</span>
-                            <span>Restaurant Hours</span>
-                            <span>餐厅营业时间</span>
-                            <span>레스토랑 영업시간</span>
+                            レストランの営業時間 | Restaurant Hours | 餐厅营业时间 | 레스토랑 영업시간
                         </div>
                         <i class="fa-solid fa-chevron-right arrow"></i>
                     </button>
@@ -291,10 +292,7 @@
                 <div class="sub-qa-section">
                     <button class="sub-qa-button">
                         <div class="button-label">
-                            <span>予約の必要性</span>
-                            <span>Reservation Requirement</span>
-                            <span>需要预订</span>
-                            <span>예약 필요성</span>
+                            予約の必要性 | Reservation Requirement | 需要预订 | 예약 필요성
                         </div>
                         <i class="fa-solid fa-chevron-right arrow"></i>
                     </button>
@@ -318,10 +316,7 @@
                 <div class="sub-qa-section">
                     <button class="sub-qa-button">
                         <div class="button-label">
-                            <span>特別な食事制限</span>
-                            <span>Special Dietary Restrictions</span>
-                            <span>特别饮食限制</span>
-                            <span>특별한 식사 제한</span>
+                            特別な食事制限 | Special Dietary Restrictions | 特别饮食限制 | 특별한 식사 제한
                         </div>
                         <i class="fa-solid fa-chevron-right arrow"></i>
                     </button>
@@ -343,14 +338,12 @@
             </div>
         </div>
 
-        <!-- ★ レベル1: アメニティに関するQ&A -->
+        <!-- ★ レベル1: アメニティ -->
         <div class="main-qa-section">
             <button class="main-qa-button">
+                <i class="fa-solid fa-shower left-icon"></i>
                 <div class="button-label">
-                    <span>アメニティに関するQ&A</span>
-                    <span>Amenities Q&A</span>
-                    <span>设施Q&A</span>
-                    <span>어메니티 Q&A</span>
+                    アメニティ | Amenities | 设施 | 어메니티
                 </div>
                 <i class="fa-solid fa-chevron-right arrow"></i>
             </button>
@@ -359,10 +352,7 @@
                 <div class="sub-qa-section">
                     <button class="sub-qa-button">
                         <div class="button-label">
-                            <span>無料Wi-Fi</span>
-                            <span>Free Wi-Fi</span>
-                            <span>免费Wi-Fi</span>
-                            <span>무료 Wi-Fi</span>
+                            無料Wi-Fi | Free Wi-Fi | 免费Wi-Fi | 무료 Wi-Fi
                         </div>
                         <i class="fa-solid fa-chevron-right arrow"></i>
                     </button>
@@ -386,10 +376,7 @@
                 <div class="sub-qa-section">
                     <button class="sub-qa-button">
                         <div class="button-label">
-                            <span>ルームサービス</span>
-                            <span>Room Service</span>
-                            <span>客房服务</span>
-                            <span>룸서비스</span>
+                            ルームサービス | Room Service | 客房服务 | 룸서비스
                         </div>
                         <i class="fa-solid fa-chevron-right arrow"></i>
                     </button>
@@ -413,10 +400,7 @@
                 <div class="sub-qa-section">
                     <button class="sub-qa-button">
                         <div class="button-label">
-                            <span>フィットネスセンター</span>
-                            <span>Fitness Center</span>
-                            <span>健身中心</span>
-                            <span>피트니스 센터</span>
+                            フィットネスセンター | Fitness Center | 健身中心 | 피트니스 센터
                         </div>
                         <i class="fa-solid fa-chevron-right arrow"></i>
                     </button>
@@ -438,14 +422,120 @@
             </div>
         </div>
 
+        <!-- ★ レベル1: 会議室 -->
+        <div class="main-qa-section">
+            <button class="main-qa-button">
+                <i class="fa-solid fa-users-cog left-icon"></i>
+                <div class="button-label">
+                    会議室 | Conference Rooms | 会议室 | 회의실
+                </div>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </button>
+            <div class="sub-qa-container">
+                <!-- ★ レベル2: 会議室の予約 -->
+                <div class="sub-qa-section">
+                    <button class="sub-qa-button">
+                        <div class="button-label">
+                            会議室の予約 | Conference Room Booking | 会议室预订 | 회의실 예약
+                        </div>
+                        <i class="fa-solid fa-chevron-right arrow"></i>
+                    </button>
+                    <div class="qa-content">
+                        <p>
+                            会議室の予約はフロントデスクまたはオンラインで行えます。利用可能な時間と料金についてはお問い合わせください。
+                        </p>
+                        <p>
+                            Conference rooms can be booked at the front desk or online. Please contact us for availability and rates.
+                        </p>
+                        <p>
+                            会议室可以在前台或在线预订。有关可用时间和费用，请联系我们。
+                        </p>
+                        <p>
+                            회의실 예약은 프론트 데스크 또는 온라인으로 가능합니다. 이용 가능 시간과 요금에 대해서는 문의해주세요.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ★ レベル1: スパ -->
+        <div class="main-qa-section">
+            <button class="main-qa-button">
+                <i class="fa-solid fa-spa left-icon"></i>
+                <div class="button-label">
+                    スパ | Spa | 水疗 | 스파
+                </div>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </button>
+            <div class="sub-qa-container">
+                <!-- ★ レベル2: スパの利用方法 -->
+                <div class="sub-qa-section">
+                    <button class="sub-qa-button">
+                        <div class="button-label">
+                            スパの利用方法 | Spa Usage | 水疗使用方法 | 스파 이용 방법
+                        </div>
+                        <i class="fa-solid fa-chevron-right arrow"></i>
+                    </button>
+                    <div class="qa-content">
+                        <p>
+                            スパはホテルの2階にあり、午前8時から午後10時まで利用可能です。利用には予約が必要です。
+                        </p>
+                        <p>
+                            The spa is located on the 2nd floor and is open from 8 AM to 10 PM. Reservations are required.
+                        </p>
+                        <p>
+                            水疗位于酒店二楼，营业时间为上午8点至晚上10点。使用需预约。
+                        </p>
+                        <p>
+                            스파는 호텔 2층에 위치하며, 오전 8시부터 오후 10시까지 이용 가능합니다. 이용하려면 예약이 필요합니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ★ レベル1: プール -->
+        <div class="main-qa-section">
+            <button class="main-qa-button">
+                <i class="fa-solid fa-swimming-pool left-icon"></i>
+                <div class="button-label">
+                    プール | Pool | 泳池 | 수영장
+                </div>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </button>
+            <div class="sub-qa-container">
+                <!-- ★ レベル2: プールの営業時間 -->
+                <div class="sub-qa-section">
+                    <button class="sub-qa-button">
+                        <div class="button-label">
+                            プールの営業時間 | Pool Hours | 泳池营业时间 | 수영장 영업시간
+                        </div>
+                        <i class="fa-solid fa-chevron-right arrow"></i>
+                    </button>
+                    <div class="qa-content">
+                        <p>
+                            プールは午前6時から午後8時まで開放しています。子供用プールは午前8時から午後6時までです。
+                        </p>
+                        <p>
+                            The pool is open from 6 AM to 8 PM. The children's pool is available from 8 AM to 6 PM.
+                        </p>
+                        <p>
+                            泳池营业时间为上午6点至下午8点。儿童泳池为上午8点至下午6点开放。
+                        </p>
+                        <p>
+                            수영장은 오전 6시부터 오후 8시까지 운영됩니다. 어린이 수영장은 오전 8시부터 오후 6시까지 이용 가능합니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- ★ レベル1: お問い合わせ -->
         <div class="main-qa-section">
             <button class="main-qa-button">
+                <i class="fa-solid fa-envelope left-icon"></i>
                 <div class="button-label">
-                    <span>お問い合わせ</span>
-                    <span>Contact Us</span>
-                    <span>联系我们</span>
-                    <span>문의하기</span>
+                    お問い合わせ | Contact Us | 联系我们 | 문의하기
                 </div>
                 <i class="fa-solid fa-chevron-right arrow"></i>
             </button>
@@ -453,10 +543,7 @@
                 <div class="sub-qa-section">
                     <button class="sub-qa-button">
                         <div class="button-label">
-                            <span>連絡先</span>
-                            <span>Contact Information</span>
-                            <span>联系方式</span>
-                            <span>연락처</span>
+                            連絡先 | Contact Information | 联系方式 | 연락처
                         </div>
                         <i class="fa-solid fa-chevron-right arrow"></i>
                     </button>
@@ -494,16 +581,11 @@
                 const subContainer = button.nextElementSibling;
                 const isActive = button.classList.contains('active');
 
-                // 他のレベル1セクションを閉じる
-                document.querySelectorAll('.sub-qa-container').forEach(container => {
-                    container.style.display = 'none';
-                });
-                document.querySelectorAll('.main-qa-button').forEach(btn => {
-                    btn.classList.remove('active');
-                });
-
-                // 現在のレベル1セクションをトグル
-                if (!isActive) {
+                // トグル動作のみ。既存のセクションを閉じない
+                if (isActive) {
+                    subContainer.style.display = 'none';
+                    button.classList.remove('active');
+                } else {
                     subContainer.style.display = 'block';
                     button.classList.add('active');
                 }
@@ -517,17 +599,11 @@
                 const qaContent = button.nextElementSibling;
                 const isActive = button.classList.contains('active');
 
-                // 同じレベル内の他のサブセクションを閉じる
-                const parentSubContainer = button.closest('.sub-qa-container');
-                parentSubContainer.querySelectorAll('.qa-content').forEach(content => {
-                    content.style.display = 'none';
-                });
-                parentSubContainer.querySelectorAll('.sub-qa-button').forEach(btn => {
-                    btn.classList.remove('active');
-                });
-
-                // 現在のサブセクションをトグル
-                if (!isActive) {
+                // トグル動作のみ。既存のサブセクションを閉じない
+                if (isActive) {
+                    qaContent.style.display = 'none';
+                    button.classList.remove('active');
+                } else {
                     qaContent.style.display = 'block';
                     button.classList.add('active');
                 }
@@ -536,6 +612,7 @@
     </script>
 </body>
 </html>
+
 
 
 
